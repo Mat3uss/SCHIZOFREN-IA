@@ -1,39 +1,45 @@
 const button = document.getElementById('login')
 
-const validarLogin = () =>{
+
+const validarLogin = async () => {
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
 
+    const urlLogin = 'https://back-login.vercel.app/usuarios'
 
-    const url = 'https://back-login.vercel.app/usuarios'
-    const ListUsers = await fetch(url)
+    const listUsers = await fetch(urlLogin)
 
+    const objUsers = await listUsers.json()
 
-    const users = await ListUsers.json()
+    if (email == '' || password == ''){
+        alert('Por Favor Preencha todos os Campos !!')
+    } else {
 
-    if(email == '' || password == ''){
-        alert('Preencha os campos corretamente!!')
-    }else{
+        let validaUser = false
+
+        console.log(objUsers)
+        objUsers.forEach(user => {
         
+            if(user.email == email && user.senha == password){
+                alert('funciona')
+                validaUser = true
+                window.location.href = './telaprincipal.html'
+                console.log(email)
+                console.log(password)
+            }
+        });
 
+        if (!validaUser){
+            alert('Por favor verifique o email e senha !!')
+        }
 
-    users.forEach(user => {
-
-        if(user.email == email && user.senha == password)
-        validaUser = true
-        window.Location.href = '../src/screens/home.html'
-        
-    })
-    if(!validaUser){
-        alert('Usuario não cadastrado!!')
     }
-    
-    }
+
 }
 
 
 
 
-button.addEventListener('click', () =>{
+button.addEventListener('click', () => {
     validarLogin()
 })

@@ -1,0 +1,79 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/img/corazon.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-direction: column; 
+}
+
+.container {
+    display: flex;
+    margin-top: -50px;
+}
+
+.retpt, .reten {
+    border: 4px solid #F6C5E8;
+    border-radius: 10px;
+    opacity: 0.55;
+    background-clip: border-box;
+    height: 750px;
+    width: 500px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: 35px;
+}
+
+.container-secao-escrita {
+    background-color: white;
+    opacity: 60%;
+    border-radius: 20px;
+    padding: 2px;
+    margin-top: 2px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.secao-escrita {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    border: transparent;    
+    justify-content: space-between;
+}
+
+.busca {
+    display: flex;
+    align-items: center;
+}
+
+.icone-lupa {
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.entrada-busca {
+    width: 1500px;
+    border: 1px solid #ccc;
+    border: transparent;
+    background: transparent; 
+}
+
+.botao-enviar {
+    padding: 0; 
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none; 
+}
+
+.botao-enviar img {
+    height: 35px; 
+    border-radius: 5px; 
+}
